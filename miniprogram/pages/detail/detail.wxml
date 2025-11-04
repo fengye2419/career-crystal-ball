@@ -1,0 +1,83 @@
+<!--detail.wxml-->
+<navigation-bar 
+  title="{{career.name}}" 
+  back="{{true}}" 
+  color="white" 
+  background="linear-gradient(135deg, #667eea 0%, #764ba2 100%)"
+></navigation-bar>
+
+<scroll-view class="container" scroll-y type="list" enhanced="{{true}}" show-scrollbar="{{false}}">
+  <view wx:if="{{career}}" class="career-detail">
+    <!-- 职业头部信息 -->
+    <view class="career-header">
+      <view class="career-icon">
+        <text class="icon-text">{{career.name.charAt(0)}}</text>
+      </view>
+      <view class="career-title">
+        <text class="title-text">{{career.name}}</text>
+        <text class="category-tag">{{career.category}}</text>
+      </view>
+    </view>
+
+    <!-- 薪资信息 -->
+    <view class="salary-card">
+      <view class="salary-header">
+        <text class="salary-label">💰 薪资范围</text>
+      </view>
+      <view class="salary-content">
+        <text class="salary-amount">{{career.salaryRange.min / 1000}}k - {{career.salaryRange.max / 1000}}k</text>
+        <text class="salary-unit">{{career.salaryRange.unit}}</text>
+      </view>
+    </view>
+
+    <!-- 职业描述 -->
+    <view class="info-card">
+      <view class="card-header">
+        <text class="card-title">📝 职业描述</text>
+      </view>
+      <view class="card-content">
+        <text class="description-text">{{career.description}}</text>
+      </view>
+    </view>
+
+    <!-- 任职要求 -->
+    <view wx:if="{{career.requirements && career.requirements.length > 0}}" class="info-card">
+      <view class="card-header">
+        <text class="card-title">✅ 任职要求</text>
+      </view>
+      <view class="card-content">
+        <view wx:for="{{career.requirements}}" wx:key="index" class="requirement-item">
+          <text class="requirement-dot">•</text>
+          <text class="requirement-text">{{item}}</text>
+        </view>
+      </view>
+    </view>
+
+    <!-- 工作职责 -->
+    <view wx:if="{{career.responsibilities && career.responsibilities.length > 0}}" class="info-card">
+      <view class="card-header">
+        <text class="card-title">📋 工作职责</text>
+      </view>
+      <view class="card-content">
+        <view wx:for="{{career.responsibilities}}" wx:key="index" class="responsibility-item">
+          <text class="responsibility-icon">→</text>
+          <text class="responsibility-text">{{item}}</text>
+        </view>
+      </view>
+    </view>
+
+    <!-- 职业前景 -->
+    <view wx:if="{{career.prospects}}" class="info-card">
+      <view class="card-header">
+        <text class="card-title">🚀 职业前景</text>
+      </view>
+      <view class="card-content">
+        <text class="prospects-text">{{career.prospects}}</text>
+      </view>
+    </view>
+
+    <!-- 底部占位空间 -->
+    <view class="bottom-spacer"></view>
+  </view>
+</scroll-view>
+

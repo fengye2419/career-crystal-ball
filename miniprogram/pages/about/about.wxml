@@ -1,0 +1,43 @@
+<!--about.wxml-->
+<navigation-bar title="关于我们" back="{{true}}" color="black" background="#FFF"></navigation-bar>
+<scroll-view class="scrollarea" scroll-y type="list" enhanced="{{true}}" show-scrollbar="{{false}}">
+  <view class="container">
+    <!-- Logo区域 -->
+    <view class="logo-section">
+      <view class="logo">📱</view>
+      <text class="app-name">职业百科</text>
+      <text class="app-version">v1.0.0</text>
+    </view>
+
+    <!-- 产品介绍 -->
+    <van-cell-group title="产品介绍">
+      <van-cell
+        title="职业百科是一款专业的职业信息查询小程序，为用户提供全面的职业信息、薪资待遇、职业要求等详细信息，帮助用户更好地了解各类职业，规划职业发展。"
+        title-style="font-size: 28rpx; line-height: 1.6; color: #666;"
+      />
+    </van-cell-group>
+
+    <!-- 核心功能 -->
+    <van-cell-group title="核心功能">
+      <van-cell title="🔍 职业搜索" />
+      <van-cell title="⭐ 收藏管理" />
+      <van-cell title="📜 浏览历史" />
+      <van-cell title="💰 薪资查询" />
+    </van-cell-group>
+
+    <!-- 联系我们 -->
+    <van-cell-group title="联系我们">
+      <van-cell title="邮箱" value="contact@example.com" />
+      <van-cell title="电话" value="400-123-4567" />
+    </van-cell-group>
+
+    <!-- 版权信息 -->
+    <van-cell-group>
+      <van-cell
+        title="© 2024 职业百科. All rights reserved."
+        title-style="text-align: center; color: #999; font-size: 24rpx;"
+      />
+    </van-cell-group>
+  </view>
+</scroll-view>
+

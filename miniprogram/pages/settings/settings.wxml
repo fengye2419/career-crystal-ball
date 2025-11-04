@@ -1,0 +1,52 @@
+<!--settings.wxml-->
+<navigation-bar title="设置" back="{{true}}" color="black" background="#FFF"></navigation-bar>
+<scroll-view class="scrollarea" scroll-y type="list" enhanced="{{true}}" show-scrollbar="{{false}}">
+  <view class="container">
+    <!-- 通知设置 -->
+    <van-cell-group title="通知设置">
+      <van-cell
+        title="推送通知"
+        value="{{notifications ? '已开启' : '已关闭'}}"
+      >
+        <van-switch
+          slot="right-icon"
+          checked="{{notifications}}"
+          bind:change="onNotificationChange"
+          active-color="#667eea"
+          size="24px"
+        />
+      </van-cell>
+    </van-cell-group>
+
+    <!-- 数据管理 -->
+    <van-cell-group title="数据管理">
+      <van-cell
+        title="清除缓存"
+        value="{{cacheSize}}"
+        is-link
+        bindtap="onClearCache"
+      />
+      <van-cell
+        title="清除浏览历史"
+        is-link
+        bindtap="onClearHistory"
+      />
+      <van-cell
+        title="清除收藏"
+        is-link
+        bindtap="onClearFavorites"
+      />
+    </van-cell-group>
+
+    <!-- 关于 -->
+    <van-cell-group title="关于">
+      <van-cell
+        title="检查更新"
+        value="v1.0.0"
+        is-link
+        bindtap="onCheckUpdate"
+      />
+    </van-cell-group>
+  </view>
+</scroll-view>
+

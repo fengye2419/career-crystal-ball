@@ -1,0 +1,56 @@
+<!--search-result.wxml-->
+<navigation-bar 
+  title="搜索结果" 
+  back="{{true}}" 
+  color="black" 
+  background="#FFF"
+></navigation-bar>
+
+<scroll-view class="scrollarea" scroll-y type="list">
+  <view class="container">
+    <!-- 搜索关键词显示 -->
+    <view class="search-header">
+      <view class="keyword-info">
+        <text class="keyword-label">搜索关键词：</text>
+        <text class="keyword-text">{{keyword}}</text>
+      </view>
+      <view class="result-count">
+        <van-tag type="primary" size="medium">共{{searchResults.length}}个结果</van-tag>
+      </view>
+    </view>
+
+    <!-- 搜索结果列表 -->
+    <view wx:if="{{searchResults.length === 0}}" class="empty-state">
+      <van-empty description="暂无搜索结果" />
+      <view class="empty-tips">
+        <text class="tips-text">试试其他关键词吧~</text>
+      </view>
+    </view>
+
+    <view wx:else class="career-cards">
+      <van-card
+        wx:for="{{searchResults}}"
+        wx:key="id"
+        custom-class="career-card"
+        data-id="{{item.id}}"
+        bindtap="onCareerTap"
+      >
+        <view slot="title" class="career-card-title">
+          <text class="career-name">{{item.name}}</text>
+          <van-tag type="primary" size="small" custom-class="career-category-tag">{{item.category}}</van-tag>
+        </view>
+        <view slot="desc" class="career-card-desc">
+          <text class="career-desc">{{item.description}}</text>
+        </view>
+        <view slot="bottom" class="career-card-price">
+          <text class="salary-text">{{item.salaryRange.min / 1000}}k - {{item.salaryRange.max / 1000}}k</text>
+          <text class="salary-unit">{{item.salaryRange.unit}}</text>
+        </view>
+      </van-card>
+    </view>
+
+    <!-- 底部占位空间 -->
+    <view class="bottom-spacer"></view>
+  </view>
+</scroll-view>
+

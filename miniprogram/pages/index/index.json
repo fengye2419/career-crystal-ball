@@ -1,0 +1,13 @@
+{
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "navigation-bar": "../../components/navigation-bar/navigation-bar",
+    "custom-tab-bar": "../../components/custom-tab-bar/custom-tab-bar",
+    "van-search": "../../miniprogram_npm/@vant/weapp/search/index",
+    "van-cell-group": "../../miniprogram_npm/@vant/weapp/cell-group/index",
+    "van-cell": "../../miniprogram_npm/@vant/weapp/cell/index",
+    "van-tag": "../../miniprogram_npm/@vant/weapp/tag/index",
+    "van-empty": "../../miniprogram_npm/@vant/weapp/empty/index",
+    "van-card": "../../miniprogram_npm/@vant/weapp/card/index"
+  }
+}

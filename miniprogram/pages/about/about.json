@@ -1,0 +1,10 @@
+{
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "navigation-bar": "../../components/navigation-bar/navigation-bar",
+    "van-cell-group": "../../miniprogram_npm/@vant/weapp/cell-group/index",
+    "van-cell": "../../miniprogram_npm/@vant/weapp/cell/index",
+    "van-divider": "../../miniprogram_npm/@vant/weapp/divider/index"
+  }
+}
+

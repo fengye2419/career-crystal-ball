@@ -1,0 +1,344 @@
+/**my.scss**/
+page {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  overflow: hidden;
+}
+
+/* 导航栏标题居中 */
+.weui-navigation-bar__center {
+  justify-content: center !important;
+  text-align: center !important;
+  color: #333333 !important;
+}
+
+/* 导航栏背景透明 */
+.weui-navigation-bar__inner {
+  background: transparent !important;
+}
+
+.scrollarea {
+  flex: 1;
+  overflow-y: auto;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.container {
+  padding: 0;
+  padding-bottom: 100rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+.container>.user-section {
+  margin-bottom: 50rpx;
+}
+
+/* 用户信息区域 */
+.user-section {
+  padding: 50rpx 30rpx 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #ffffff;
+  margin-bottom: 50rpx;
+  padding-bottom: 0;
+}
+
+.user-info-unlogin {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 0;
+}
+
+.user-info-login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 0;
+}
+
+.login-btn-wrapper {
+  margin-top: 24rpx;
+  margin-bottom: 0;
+  display: flex;
+  justify-content: center;
+}
+
+/* 统一内容区域 */
+.unified-content {
+  border: none !important;
+  box-shadow: none !important;
+  margin: 0 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  padding: 0 30rpx 0 !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  background: transparent !important;
+}
+
+.unified-content::after {
+  display: none !important;
+}
+
+/* 覆盖 van-cell-group 的默认样式 */
+van-cell-group.unified-content {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+/* 去掉 van-cell 的边框和背景色 */
+.unified-content .van-cell {
+  background: transparent !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+/* 隐藏默认的下划线 */
+.unified-content .van-cell::after {
+  display: none !important;
+}
+
+/* 隐藏所有 van-cell 的默认下划线，包括菜单项 */
+.menu-item-wrapper .van-cell::after {
+  display: none !important;
+}
+
+.menu-cell::after {
+  display: none !important;
+}
+
+.menu-item-wrapper .menu-cell::after {
+  display: none !important;
+}
+
+/* 菜单项下划线已通过 .menu-item-wrapper 实现，这里不再重复添加 */
+
+.unified-content .van-cell__wrapper {
+  justify-content: flex-start !important;
+  align-items: center !important;
+}
+
+.unified-content .van-cell__title {
+  padding-left: 0 !important;
+  text-align: left !important;
+  flex: 0 0 auto !important;
+}
+
+.unified-content .van-cell__value {
+  padding-right: 0 !important;
+  text-align: left !important;
+}
+
+.unified-content .van-cell__left-icon {
+  margin-left: 0 !important;
+  margin-right: 16rpx !important;
+}
+
+.unified-content .van-cell__right-icon {
+  margin-left: auto !important;
+}
+
+/* 菜单列表容器 */
+.menu-list {
+  padding: 0 30rpx;
+}
+
+.menu-item-wrapper {
+  position: relative;
+  border-bottom: 1rpx solid #ebedf0;
+  padding: 25rpx 0;
+}
+
+.menu-item-wrapper:last-child {
+  border-bottom: none;
+}
+
+.menu-divider {
+  display: none;
+}
+
+/* 菜单区域 */
+.menu-cell:first-child {
+  margin-top: 0 !important;
+}
+
+.menu-cell {
+  padding: 0 !important;
+  margin-bottom: 0 !important;
+  position: relative !important;
+}
+
+/* 直接覆盖 van-cell 的默认样式 */
+.menu-item-wrapper .van-cell {
+  padding: 0 !important;
+}
+
+.menu-item-wrapper .van-cell__wrapper {
+  padding: 25rpx 0 !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  display: flex !important;
+  position: relative !important;
+  width: 100% !important;
+}
+
+.menu-item-wrapper .van-cell {
+  width: 100% !important;
+  display: flex !important;
+  justify-content: space-between !important;
+}
+
+.menu-item-wrapper .van-cell__value {
+  flex: 1 !important;
+  display: flex !important;
+  justify-content: flex-end !important;
+  align-items: center !important;
+}
+
+.menu-cell .van-cell__wrapper {
+  padding: 25rpx 0 !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  display: flex !important;
+  position: relative !important;
+  width: 100% !important;
+}
+
+.menu-cell .van-cell__title {
+  padding-left: 0 !important;
+  text-align: left !important;
+  flex: 0 0 auto !important;
+  font-size: 32rpx;
+  font-weight: 500;
+  color: #333333;
+  display: flex !important;
+  align-items: center !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+.menu-item-wrapper .van-cell__title {
+  flex: 0 0 auto !important;
+  margin-right: 0 !important;
+}
+
+.menu-cell .van-cell__left-icon {
+  margin-left: 0 !important;
+  margin-right: 24rpx !important;
+  font-size: 40rpx !important;
+  color: #666666 !important;
+}
+
+.menu-cell .van-cell__right-icon {
+  color: #cccccc !important;
+  margin-left: auto !important;
+  flex-shrink: 0 !important;
+  margin-right: 0 !important;
+}
+
+.menu-item-wrapper .van-cell__right-icon {
+  color: #cccccc !important;
+  margin-left: auto !important;
+  flex-shrink: 0 !important;
+  margin-right: 0 !important;
+}
+
+
+.avatar-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 24rpx;
+}
+
+.user-info-login .avatar-container {
+  margin-bottom: 24rpx;
+}
+
+.avatar-btn {
+  padding: 0;
+  background: transparent;
+  border: none;
+  border-radius: 50%;
+  overflow: visible;
+  position: relative;
+}
+
+.avatar-btn::after {
+  border: none;
+}
+
+.avatar {
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 50%;
+  background: #f5f5f5;
+}
+
+.avatar-placeholder {
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 50%;
+  background: #f0f0f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  border: 2rpx solid #e0e0e0;
+}
+
+.avatar-placeholder::before {
+  content: '';
+  position: absolute;
+  width: 70rpx;
+  height: 70rpx;
+  background: #d0d0d0;
+  border-radius: 50%;
+  top: 30rpx;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.avatar-placeholder::after {
+  content: '';
+  position: absolute;
+  width: 100rpx;
+  height: 100rpx;
+  background: #d0d0d0;
+  border-radius: 50% 50% 0 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.user-name {
+  font-size: 36rpx;
+  font-weight: 500;
+  color: #333333;
+  text-align: center;
+  margin-top: 24rpx;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+/* 美化登录按钮 */
+.login-btn-wrapper .van-button {
+  border-radius: 50rpx !important;
+  padding: 0 40rpx !important;
+  height: 72rpx !important;
+  line-height: 72rpx !important;
+  background: #667eea !important;
+  border: none !important;
+  font-size: 28rpx !important;
+  font-weight: 500 !important;
+}

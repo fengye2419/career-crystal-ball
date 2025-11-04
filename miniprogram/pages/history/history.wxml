@@ -1,0 +1,38 @@
+<!--history.wxml-->
+<navigation-bar title="浏览历史" back="{{true}}" color="black" background="#FFF"></navigation-bar>
+<scroll-view class="scrollarea" scroll-y type="list" enhanced="{{true}}" show-scrollbar="{{false}}">
+  <view class="container">
+    <van-empty wx:if="{{history.length === 0}}" description="暂无浏览历史">
+      <view slot="description">
+        <text>暂无浏览历史</text>
+        <text class="empty-tip">去首页浏览职业信息吧</text>
+      </view>
+    </van-empty>
+    <van-cell-group wx:else>
+      <van-cell
+        wx:for="{{history}}"
+        wx:key="id"
+        title="{{item.name}}"
+        label="{{item.description}}"
+        value="{{item.salaryRange.min / 1000}}k - {{item.salaryRange.max / 1000}}k"
+        is-link
+        data-id="{{item.id}}"
+        bindtap="onCareerTap"
+      >
+        <view slot="title">
+          <text class="career-name">{{item.name}}</text>
+          <van-tag type="primary" size="small" style="margin-left: 10rpx;">{{item.category}}</van-tag>
+        </view>
+        <view slot="label" class="career-label">
+          <text class="career-desc">{{item.description}}</text>
+          <text class="career-time">{{item.viewTime}}</text>
+        </view>
+        <view slot="value" class="career-value">
+          <text class="salary-text">{{item.salaryRange.min / 1000}}k - {{item.salaryRange.max / 1000}}k</text>
+          <text class="salary-unit">{{item.salaryRange.unit}}</text>
+        </view>
+      </van-cell>
+    </van-cell-group>
+  </view>
+</scroll-view>
+

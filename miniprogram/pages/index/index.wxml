@@ -1,0 +1,48 @@
+<!--index.wxml-->
+<navigation-bar title="首页" back="{{false}}" color="black" background="#FFF"></navigation-bar>
+<custom-tab-bar></custom-tab-bar>
+<scroll-view class="scrollarea" scroll-y type="list">
+  <view class="container">
+    <!-- 搜索框 -->
+    <view class="search-section">
+      <van-search
+        value="{{ searchKeyword }}"
+        placeholder="搜索职业..."
+        shape="round"
+        clear-trigger="always"
+        bind:search="onSearchConfirm"
+        bind:change="onSearchInput"
+        bind:clear="onClearSearch"
+      >
+      </van-search>
+    </view>
+
+    <!-- 热门职业 -->
+    <view class="hot-careers-section">
+      <view class="section-title">
+        <text class="title-text">🔥 热门职业</text>
+      </view>
+      <view class="career-cards">
+        <van-card
+          wx:for="{{hotCareers}}"
+          wx:key="id"
+          custom-class="career-card"
+          data-id="{{item.id}}"
+          bindtap="onCareerTap"
+        >
+          <view slot="title" class="career-card-title">
+            <text class="career-name">{{item.name}}</text>
+            <van-tag type="primary" size="small" custom-class="career-category-tag">{{item.category}}</van-tag>
+          </view>
+          <view slot="desc" class="career-card-desc">
+            <text class="career-desc">{{item.description}}</text>
+          </view>
+          <view slot="bottom" class="career-card-price">
+            <text class="salary-text">{{item.salaryRange.min / 1000}}k~{{item.salaryRange.max / 1000}}k</text>
+            <text class="salary-unit">{{item.salaryRange.unit}}</text>
+          </view>
+        </van-card>
+      </view>
+    </view>
+  </view>
+</scroll-view>
